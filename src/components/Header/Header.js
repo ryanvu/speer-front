@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+//styles
 import './Header.scss';
 
 //assets
@@ -17,15 +20,33 @@ const Header = () => {
                 <img onClick={toggleNav} className="header__logo-hb" src={hamburger} alt="hamburger icon svg"/>
                 <h1 className="header__logo-title">EXP|CON</h1>
             </div>
-
+        <AnimatePresence>
             {showNav && 
-            <nav className="header__nav">
+            <motion.nav 
+            initial={{scale: 0}}
+            animate={{scale: 1, originX: 0, originY: 0}}
+            transition={{duration: 0.75}}
+            exit={{scale: 0, transition:{duration: 0.75}}}
+            className="header__nav">
                 <ul className="header__nav-container">
-                    <li className="header__nav-item">WHAT IS IT</li>
-                    <li className="header__nav-item">PERKS</li>
-                    <li className="header__nav-item">PRICING</li>
+                    <motion.li className="header__nav-item"
+                    initial={{opacity: 0, y: 100}}
+                    animate={{opacity: 1, y: 0}}
+                    transition={{delay: 0.75, duration: 0.5}}
+                    >WHAT IS IT</motion.li>
+                    <motion.li className="header__nav-item"
+                    initial={{opacity: 0, y: 100}}
+                    animate={{opacity: 1, y: 0}}
+                    transition={{delay: 0.88, duration: 0.5}}
+                    >PERKS</motion.li>
+                    <motion.li className="header__nav-item"
+                    initial={{opacity: 0, y: 100}}
+                    animate={{opacity: 1, y: 0}}
+                    transition={{delay: 1, duration: 0.5}}
+                    >PRICING</motion.li>
                 </ul>    
-            </nav>}
+            </motion.nav>}
+        </AnimatePresence>
         </header>
     )
 }
