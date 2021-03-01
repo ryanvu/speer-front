@@ -1,8 +1,13 @@
 import React from 'react'
+import { useAppContext } from '../../context/AppContext';
 
-const Button = ({ text }) => {
+import './Button.scss';
+const Button = ({ text, size }) => {
+
+    const { colour } = useAppContext();
+
     return (
-        <button className="btn">
+        <button className={size ? `btn btn__${size}` : `btn`} style={{color: `${colour}`}}>
             {text}
         </button>
     )
