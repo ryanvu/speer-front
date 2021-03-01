@@ -1,0 +1,26 @@
+.hero{
+    height: 100vh;
+    max-width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    &__title{
+        font-size: 3.75rem;
+        font-weight: 600;
+        letter-spacing: 6.5px;
+        margin-bottom: 2rem;
+    }
+
+    &__caption{
+        text-align: center;
+        font-size: 2rem;
+        font-weight: normal;
+        letter-spacing: 3.2px;
+        line-height: 3rem;
+    }
+}

@@ -32,17 +32,17 @@ const Header = () => {
                     <motion.li className="header__nav-item"
                     initial={{opacity: 0, y: 100}}
                     animate={{opacity: 1, y: 0}}
-                    transition={{delay: 0.75, duration: 0.5}}
+                    transition={{delay: 0.25, duration: 0.5}}
                     >WHAT IS IT</motion.li>
                     <motion.li className="header__nav-item"
                     initial={{opacity: 0, y: 100}}
                     animate={{opacity: 1, y: 0}}
-                    transition={{delay: 0.88, duration: 0.5}}
+                    transition={{delay: 0.35, duration: 0.5}}
                     >PERKS</motion.li>
                     <motion.li className="header__nav-item"
                     initial={{opacity: 0, y: 100}}
                     animate={{opacity: 1, y: 0}}
-                    transition={{delay: 1, duration: 0.5}}
+                    transition={{delay: 0.45, duration: 0.5}}
                     >PRICING</motion.li>
                 </ul>    
             </motion.nav>}
