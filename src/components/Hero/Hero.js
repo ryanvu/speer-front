@@ -25,6 +25,10 @@ const Hero = () => {
             clearInterval(interval);
         }
     }, [index])
+
+    const selectImage = (index) => {
+        setIndex(index)
+    }
     return (
         <section className="hero" style={{backgroundImage: `url(${imgs[index]})`}}>
             <h2 className="hero__title">INTERACTIVE CONCERT EXPERIENCE</h2>
@@ -32,7 +36,7 @@ const Hero = () => {
             before and from the comfort of your own home.</p>
         <div className="hero__indicator">
             {imgs.map((img, i)=>{
-                return <Indicator check={i} index={index} key={i}/>
+                return <Indicator handleClick={selectImage} check={i} index={index} key={i}/>
             })}
         </div>
         </section>
