@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import hero1 from '../../assets/images/hero1.png';
 import hero2 from '../../assets/images/hero2.png';
 import hero3 from '../../assets/images/hero3.png';
+import Indicator from '../Indicator/Indicator';
 //styles
 import './Hero.scss';
 
@@ -29,6 +30,11 @@ const Hero = () => {
             <h2 className="hero__title">INTERACTIVE CONCERT EXPERIENCE</h2>
             <p className="hero__caption">Experience your favourite artists like never <br />
             before and from the comfort of your own home.</p>
+        <div className="hero__indicator">
+            {imgs.map((img, i)=>{
+                return <Indicator check={i} index={index} key={i}/>
+            })}
+        </div>
         </section>
     )
 }

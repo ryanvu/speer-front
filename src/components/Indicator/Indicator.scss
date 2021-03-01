@@ -1,0 +1,12 @@
+.indicator{
+    height: 1rem;
+    width: 1rem;
+    border-radius: 8px;
+    border: 1px solid white;
+    margin-right: 0.5rem;
+
+    &__active{
+        @extend .indicator;
+        background: white;
+    }
+}

@@ -20,7 +20,7 @@ const Header = () => {
                 <img onClick={toggleNav} className="header__logo-hb" src={hamburger} alt="hamburger icon svg"/>
                 <h1 className="header__logo-title">EXP|CON</h1>
             </div>
-        <AnimatePresence>
+        <AnimatePresence exitBeforeEnter>
             {showNav && 
             <motion.nav 
             initial={{scale: 0}}
@@ -33,16 +33,19 @@ const Header = () => {
                     initial={{opacity: 0, y: 100}}
                     animate={{opacity: 1, y: 0}}
                     transition={{delay: 0.25, duration: 0.5}}
+                    exit={{y: 100}}
                     >WHAT IS IT</motion.li>
                     <motion.li className="header__nav-item"
                     initial={{opacity: 0, y: 100}}
                     animate={{opacity: 1, y: 0}}
                     transition={{delay: 0.35, duration: 0.5}}
+                    exit={{y: 100}}
                     >PERKS</motion.li>
                     <motion.li className="header__nav-item"
                     initial={{opacity: 0, y: 100}}
                     animate={{opacity: 1, y: 0}}
                     transition={{delay: 0.45, duration: 0.5}}
+                    exit={{y: 100}}
                     >PRICING</motion.li>
                 </ul>    
             </motion.nav>}
