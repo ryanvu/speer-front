@@ -32,10 +32,12 @@ const Hero = () => {
     }
     return (
         <section className="hero" style={{backgroundImage: `url(${imgs[index]})`}}>
-            <h2 className="hero__title">INTERACTIVE CONCERT EXPERIENCE</h2>
-            <p className="hero__caption">Experience your favourite artists like never <br />
-            before and from the comfort of your own home.</p>
-            <Button text="TRY IT NOW" size="med"/>
+            <div className="hero__wrap">
+                <h2 className="hero__title">INTERACTIVE CONCERT EXPERIENCE</h2>
+                <p className="hero__caption">Experience your favourite artists like never <br />
+                before and from the comfort of your own home.</p>
+                <Button text="TRY IT NOW" size="med"/>
+            </div>
         <div className="hero__indicator">
             {imgs.map((img, i)=>{
                 return <Indicator handleClick={selectImage} check={i} index={index} key={i}/>
