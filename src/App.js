@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 //components
 import Home from './pages/Home';
 import Payment from './pages/Payment';
+import Price from './pages/Price';
 //styles
 import './styles/App.scss';
 
@@ -15,6 +16,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/pay" component={Payment} />
+          <Route path="/price" component={Price} />
         </Switch>
       </Router>
     </div>
