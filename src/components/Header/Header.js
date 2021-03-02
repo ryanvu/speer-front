@@ -15,12 +15,13 @@ const Header = (props) => {
 
     const [showNav, setShowNav] = useState(false);
 
-    const { headerCol, changeHeaderCol, page } = useAppContext();
+    const { headerCol, changeHeaderCol, page, changeNavState, isNavOpen } = useAppContext();
 
     const closeNav = () => {
         setShowNav(false);
     }
     const toggleNav = () => {
+        changeNavState();
         if(page === "pay"){
             if (headerCol === "#000000") {
                 changeHeaderCol("#FFFFFF")
@@ -36,10 +37,10 @@ const Header = (props) => {
     }
 
     return (
-        <header className="header">
+        <header className="header" style={(page === "home") ? {position: "fixed"} : null}>
             <div className="header__logo">
                 <img onClick={toggleNav} className="header__logo-hb" src={(headerCol === "#000000") ? hamburgerb : hamburger} alt="hamburger icon svg"/>
-                <h1 className="header__logo-title" style={(headerCol === "#000000") ? {color: `${headerCol}`} : null}>EXP|CON</h1>
+                <h1 className="header__logo-title" style={(headerCol === "#000000") ? {color: `${headerCol}`} : {color: `${headerCol}`}}>EXP|CON</h1>
             </div>
         <AnimatePresence>
             {showNav && 
@@ -51,20 +52,26 @@ const Header = (props) => {
             exit={{scale: 0, transition:{duration: 0.75}}}
             className="header__nav">
                 <ul className="header__nav-container">
-                    <motion.li onClick={closeNav}className="header__nav-item"
+                    <motion.li onClick={closeNav}
+                    className="header__nav-item"
                     initial={{opacity: 0, y: 100}}
                     animate={{opacity: 1, y: 0}}
                     transition={{delay: 0.25, duration: 0.5}}
+                    style={{color: `${headerCol}`}}
                     ><Link className="header__nav-link" to="/">WHAT IS IT</Link></motion.li>
-                    <motion.li onClick={closeNav}className="header__nav-item"
+                    <motion.li onClick={closeNav}
+                    className="header__nav-item"
                     initial={{opacity: 0, y: 100}}
                     animate={{opacity: 1, y: 0}}
                     transition={{delay: 0.35, duration: 0.5}}
+                    style={{color: `${headerCol}`}}
                     ><Link className="header__nav-link" to="/">PERKS</Link></motion.li>
-                    <motion.li onClick={closeNav}className="header__nav-item"
+                    <motion.li onClick={closeNav}
+                    className="header__nav-item"
                     initial={{opacity: 0, y: 100}}
                     animate={{opacity: 1, y: 0}}
                     transition={{delay: 0.45, duration: 0.5}}
+                    style={{color: `${headerCol}`}}
                     ><Link className="header__nav-link" to="/price">PRICING</Link></motion.li>
                 </ul>    
             </motion.nav>}

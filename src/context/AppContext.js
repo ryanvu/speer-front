@@ -7,8 +7,9 @@ export const useAppContext = () => {
 }
 
 export const AppProvider = ({ children }) => {
-    const [colour, setColour] = useState("#FFFFFF")
-    const [headerCol, setHeaderCol] = useState("#FFFFFF")
+    const [colour, setColour] = useState("#FFFFFF");
+    const [headerCol, setHeaderCol] = useState("#FFFFFF");
+    const [isNavOpen, setIsNavOpen] = useState(false);
     const [page, setPage] = useState("");
 
     const changeAppColour = (colour) =>{
@@ -23,13 +24,19 @@ export const AppProvider = ({ children }) => {
         setPage(page);
     }
 
+    const changeNavState = () => {
+        setIsNavOpen(prev => !prev)
+    };
+
     const value = {
         colour,
         changeAppColour,
         headerCol,
         changeHeaderCol,
         page,
-        changePage
+        changePage,
+        isNavOpen,
+        changeNavState
     }
 
     return (

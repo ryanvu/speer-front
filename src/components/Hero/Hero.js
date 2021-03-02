@@ -37,9 +37,9 @@ const Hero = () => {
             <section className="hero">
                 <AnimatePresence initial={false}>
                     <motion.img 
-                    initial={{opacity: 0, skew: -100}}
-                    animate={{opacity: 1, skew: 0, transition: {duration: 2}}}
-                    exit={{opacity: 0, skew: 100, transition: {duration: 2}}}
+                    initial={{opacity: 0, skew: -50, scale: 0}}
+                    animate={{opacity: 1, skew: 0, scale: 1, transition: {duration: 2}}}
+                    exit={{opacity: 0, skew: 100, scale: 0, transition: {duration: 2}}}
                     className="hero__img" 
                     key={imgs[index]}
                     src={imgs[index]} alt="Hero Image of concerts"/>

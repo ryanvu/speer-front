@@ -1,0 +1,50 @@
+.yellow{
+    background: #FFB33F;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    padding-left: 184px;
+
+
+    &__wrap{
+        display: flex;
+        flex-direction: column;
+        max-width: 50%;
+    }
+
+    &__title{
+        font-size: 74px;
+        letter-spacing: 7.4px;
+        color: white;
+        margin-bottom: 1.5rem;
+    }
+
+    &__caption{
+        font-size: 51px;
+        letter-spacing: 5.1px;
+        margin-bottom: 41px;
+    }
+
+    &__btn{
+        align-self: start;
+        padding: 27px 100px;
+        border: none;
+        color: #FFB33F;
+        font-size: 23px;
+        letter-spacing: 2.3px;
+        border-radius: 70px;
+
+        &:active{
+             outline: none;
+        }
+
+        &:focus{
+            outline: none;
+        }
+
+        &:hover{
+             cursor: pointer;
+        }
+    }
+}
