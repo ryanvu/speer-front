@@ -6,6 +6,7 @@ import Tier from '../components/Tier/Tier';
 import { basic, advpro } from '../data/tierLists';
 
 import './Price.scss';
+import Perks from '../components/Perks/Perks';
 
 const Price = () => {
 
@@ -14,8 +15,9 @@ const Price = () => {
     useEffect(() => {
         changePage("price")
     }, [])
-    
+
     return (
+        <>
         <main className="price">
             <div className="price__wrap">
                 <h1 className="price__title">PRICING</h1>
@@ -27,6 +29,8 @@ const Price = () => {
                 <Tier src={advpro} colour="#1FE1E9" per="YEARLY" level="PRO" price="$120"/>
             </div>
         </main>
+        <Perks bg="#D24848" price/>
+        </>
     )
 }
 

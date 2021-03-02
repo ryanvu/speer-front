@@ -1,0 +1,25 @@
+.article{
+    display: flex;
+    flex-direction: column;
+    margin-right: 170px;
+
+    &__underline{
+        width: 100px;
+        margin-bottom: 24px;
+    }
+
+    &__title{
+        font-size: 51px;
+        letter-spacing: 5.1px;
+        margin-bottom: 28px;
+        height: 185px;
+        width: 80%;
+    }
+
+    &__caption{
+        font-size: 35px;
+        letter-spacing: 3.5px;
+        color: white;
+        width: 100%;
+    }
+}
