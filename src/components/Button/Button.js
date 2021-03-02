@@ -1,8 +1,10 @@
 import React from 'react'
+
 import { useAppContext } from '../../context/AppContext';
 
 import './Button.scss';
 const Button = ({ text, size }) => {
+
 
     const { colour } = useAppContext();
 
@@ -14,7 +16,7 @@ const Button = ({ text, size }) => {
         color: colour,
         background: "white"
     }
-    console.log(colour)
+    
     return (
         <button className={size ? `btn btn__${size}` : `btn`} style={(colour === "#FFFFFF" ? gradient : white)}>
             {text}

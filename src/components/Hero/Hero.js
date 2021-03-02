@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion'
 
 //assets
 import hero1 from '../../assets/images/hero1.png';
@@ -31,19 +33,30 @@ const Hero = () => {
         setIndex(index)
     }
     return (
-        <section className="hero" style={{backgroundImage: `url(${imgs[index]})`}}>
-            <div className="hero__wrap">
-                <h2 className="hero__title">INTERACTIVE CONCERT EXPERIENCE</h2>
-                <p className="hero__caption">Experience your favourite artists like never <br />
-                before and from the comfort of your own home.</p>
-                <Button text="TRY IT NOW" size="med"/>
+        
+            <section className="hero">
+                <AnimatePresence initial={false}>
+                    <motion.img 
+                    initial={{opacity: 0, skew: -100}}
+                    animate={{opacity: 1, skew: 0, transition: {duration: 2}}}
+                    exit={{opacity: 0, skew: 100, transition: {duration: 2}}}
+                    className="hero__img" 
+                    key={imgs[index]}
+                    src={imgs[index]} alt="Hero Image of concerts"/>
+                </AnimatePresence>
+                <div className="hero__wrap">
+                    <h2 className="hero__title">INTERACTIVE CONCERT EXPERIENCE</h2>
+                    <p className="hero__caption">Experience your favourite artists like never <br />
+                    before and from the comfort of your own home.</p>
+                    <Link className="hero__btn" to="/price"><Button text="TRY IT NOW" size="med"/></Link>
+                </div>
+            <div className="hero__indicator">
+                {imgs.map((img, i)=>{
+                    return <Indicator handleClick={selectImage} check={i} index={index} key={i}/>
+                })}
             </div>
-        <div className="hero__indicator">
-            {imgs.map((img, i)=>{
-                return <Indicator handleClick={selectImage} check={i} index={index} key={i}/>
-            })}
-        </div>
-        </section>
+            </section>
+        
     )
 }
 

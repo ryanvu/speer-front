@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useAppContext } from '../context/AppContext';
+//components
 import Tier from '../components/Tier/Tier';
+//data
 import { basic, advpro } from '../data/tierLists';
 
 import './Price.scss';
 
 const Price = () => {
+
+    const { changePage } = useAppContext();
+
+    useEffect(() => {
+        changePage("price")
+    }, [])
+    
     return (
         <main className="price">
             <div className="price__wrap">

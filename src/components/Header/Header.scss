@@ -53,6 +53,15 @@
                 cursor: pointer;
             }
         }
+
+        &-link{
+            text-decoration: none;
+            color: inherit;
+
+            &:visited{
+                @extend .header__nav-link;
+            }
+        }
         
     }
 }

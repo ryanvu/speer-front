@@ -39,5 +39,9 @@
         letter-spacing: 2.4px;
         font-weight: bold;
         margin-bottom: 256px;
+
+        &:active{
+            outline: none;
+        }
     }
 }

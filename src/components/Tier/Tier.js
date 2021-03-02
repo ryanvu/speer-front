@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 //styles
 import './Tier.scss';
 
@@ -13,7 +15,7 @@ const Tier = ({colour, price, level, per, src}) => {
             <span className="tier__per">{per}</span>
             <span className="tier__price">{price}</span>
             <List src={src}/>
-            <button className="tier__btn" style={{background: `${colour}`}}>SELECT</button>
+            <Link to="/pay"><button className="tier__btn" style={{background: `${colour}`}}>SELECT</button></Link>
         </div>
     )
 }

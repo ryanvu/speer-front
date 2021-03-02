@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 //context
 import { useAppContext } from '../../context/AppContext'; 
@@ -16,6 +17,9 @@ const Header = (props) => {
 
     const { headerCol, changeHeaderCol, page } = useAppContext();
 
+    const closeNav = () => {
+        setShowNav(false);
+    }
     const toggleNav = () => {
         if(page === "pay"){
             if (headerCol === "#000000") {
@@ -47,21 +51,21 @@ const Header = (props) => {
             exit={{scale: 0, transition:{duration: 0.75}}}
             className="header__nav">
                 <ul className="header__nav-container">
-                    <motion.li className="header__nav-item"
+                    <motion.li onClick={closeNav}className="header__nav-item"
                     initial={{opacity: 0, y: 100}}
                     animate={{opacity: 1, y: 0}}
                     transition={{delay: 0.25, duration: 0.5}}
-                    >WHAT IS IT</motion.li>
-                    <motion.li className="header__nav-item"
+                    ><Link className="header__nav-link" to="/">WHAT IS IT</Link></motion.li>
+                    <motion.li onClick={closeNav}className="header__nav-item"
                     initial={{opacity: 0, y: 100}}
                     animate={{opacity: 1, y: 0}}
                     transition={{delay: 0.35, duration: 0.5}}
-                    >PERKS</motion.li>
-                    <motion.li className="header__nav-item"
+                    ><Link className="header__nav-link" to="/">PERKS</Link></motion.li>
+                    <motion.li onClick={closeNav}className="header__nav-item"
                     initial={{opacity: 0, y: 100}}
                     animate={{opacity: 1, y: 0}}
                     transition={{delay: 0.45, duration: 0.5}}
-                    >PRICING</motion.li>
+                    ><Link className="header__nav-link" to="/price">PRICING</Link></motion.li>
                 </ul>    
             </motion.nav>}
         </AnimatePresence>

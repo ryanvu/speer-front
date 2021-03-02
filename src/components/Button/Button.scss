@@ -3,12 +3,17 @@
     border: none;
     font-weight: bold;
     align-self: center;
+
     &:active{
         outline: none;
     }
 
     &:focus{
         outline: none;
+    }
+
+    &:hover{
+        cursor: pointer;
     }
 
     &__xs{
