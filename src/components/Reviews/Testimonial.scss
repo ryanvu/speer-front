@@ -1,0 +1,19 @@
+.testimonial{
+    display: flex;
+    flex-direction: column;
+    margin-right: 117px;
+
+    &__title{
+        font-size: 35px;
+        letter-spacing: 3.5px;
+        color: white;
+        margin-bottom: 1.5rem;
+    }
+
+    &__comment{
+        font-size: 35px;
+        letter-spacing: 3.5px;
+        color: black;
+        width: 308px;
+    }
+}
