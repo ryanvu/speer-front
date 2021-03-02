@@ -3,6 +3,8 @@ import './Payment.scss';
 
 //context
 import { useAppContext } from '../context/AppContext';
+import Radio from '../components/Radio/Radio';
+import Input from '../components/Input/Input';
 
 const Payment = () => {
 
@@ -19,18 +21,35 @@ const Payment = () => {
 
             <form className="payment__form" action="submit">
                 <p className="payment__step">1. Select your plan</p>
-                <fieldset id="plan">
-                    
-                    <input type="radio" name="plan" value="basic"/>
-                    <label htmlFor="basic">BASIC</label>
-                    
-                    <input type="radio" name="plan" value="advanced"/>
-                    <label htmlFor="advanced">ADVANCED</label>
-                    
-                    <input type="radio" name="plan" value="pro"/>
-                    <label htmlFor="pro">PRO</label>
+                <fieldset className="payment__radio" id="plan">
+                    <Radio name="plan" value="basic" label="basic" color="#D24848"/>
+                    <Radio name="plan" value="advanced" label="advanced" color="#FFB33F"/>
+                    <Radio name="plan" value="pro" label="pro" color="#1FE1E9"/>
                 </fieldset>
-                <p className="payment__step">2. Billing Information</p>
+                <div className="payment__middle">
+                    <div className="payment__middle-left">
+                        <p className="payment__step">2. Billing Information</p>
+                        <div className="payment__wrapper">
+                            <Input label="full name"/>
+                            <Input label="billing address"/>
+                            <div className="payment__inputwrap">
+                                <Input width="320px" label="city"/>
+                                <Input width="320px" label="postal code"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="payment__middle-right">
+                        <p className="payment__step">3. Credit Card Information</p>
+                       
+                            <Input label="cardholder's name"/>
+                            <Input label="card number"/>
+                            <div className="payment__inputwrap">
+                                <Input width="321px" label="city"/>
+                                <Input width="321px" label="postal code"/>
+                            </div>
+                      
+                    </div>
+                </div>
             </form>
         </main>
     )
