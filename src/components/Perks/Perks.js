@@ -7,7 +7,7 @@ import Article from './Article'
 import './Perks.scss'; 
 const Perks = ({bg, price}) => {
     return (
-        <div className="perks" style={bg ? {background: `${bg}`} : null}>
+        <div id="perks" className="perks" style={bg ? {background: `${bg}`} : null}>
             <h4 className="perks__title">PERKS</h4>
             {price ? 
             <div className="perks__articles">
