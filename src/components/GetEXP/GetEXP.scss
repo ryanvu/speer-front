@@ -1,0 +1,37 @@
+.get{
+    display: flex;
+    justify-content: center;
+    min-height: 60vh;
+    background: #191919;
+
+    &__block{
+        display: flex;
+        align-self: center;
+        justify-content: center;
+    }
+    &__wrap{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 258px;
+    }
+
+    &__title{
+        font-size: 74px;
+        letter-spacing: 7.4px;
+        color: #D34848
+    }
+
+    &__caption{
+        color: white;
+        font-weight: 100;
+        font-size: 51px;
+        letter-spacing: 5.1px;
+    }
+
+    &__btn{
+        display: flex;
+        align-self: center;
+        text-decoration: none;
+    }
+}
