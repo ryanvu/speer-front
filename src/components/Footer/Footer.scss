@@ -1,0 +1,46 @@
+.footer{
+    height: 538px;
+    color: white;
+    background: #5E33D1;
+
+    &__wrap{
+        display: flex;
+        align-items: center;
+        padding-top: 189px;
+        margin-left: 139px;
+    }
+
+    &__mailsvg{
+        height: 30px;
+        margin-right: 26px;
+    }
+    &__email{
+        font-size: 35px;
+        letter-spacing: 3.5px;
+    }
+
+    &__bottom{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 89px;
+    }
+
+    &__icon{
+        font-size: 48px;
+        letter-spacing: 4.8px;
+        font-weight: 100;
+        margin-bottom: 45px;
+    }
+
+    &__hang{
+        font-size: 24px;
+        letter-spacing: 2.4px;
+        font-weight: 100;
+    }
+}

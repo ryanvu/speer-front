@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 
 //components
@@ -18,6 +19,7 @@ function App() {
           <Route path="/pay" exact component={Payment} />
           <Route path="/price" exact component={Price} />
         </Switch>
+        <Footer />
       </Router>
     </div>
   );
