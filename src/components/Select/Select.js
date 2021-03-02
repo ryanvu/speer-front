@@ -1,11 +1,15 @@
 import React from 'react'
 
-const Select = ({label, name}) => {
+import "./Select.scss";
+
+const Select = ({label, name, options, width}) => {
     return (
         <div className="select">
-            <label htmlFor={label}>{label}</label>
-            <select name={name} id={name}>
-                
+            <label className="select__label" htmlFor={label}>{label.toUpperCase()}</label>
+            <select className="select__box" value="" style={(width) ? {width: `${width}`} : null} name={name} id={name}>
+                {options.map((i) => {
+                    return <option value={i}>{i}</option>
+                })}
             </select>
         </div>
     )

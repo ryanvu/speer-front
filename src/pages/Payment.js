@@ -5,6 +5,11 @@ import './Payment.scss';
 import { useAppContext } from '../context/AppContext';
 import Radio from '../components/Radio/Radio';
 import Input from '../components/Input/Input';
+import Select from '../components/Select/Select';
+
+//data
+import { months, year, countries } from '../data/selectOptions';
+import Button from '../components/Button/Button';
 
 const Payment = () => {
 
@@ -36,7 +41,10 @@ const Payment = () => {
                                 <Input width="320px" label="city"/>
                                 <Input width="320px" label="postal code"/>
                             </div>
+                            <Select options={countries} label="country"/>
                         </div>
+                        <p className="payment__tos">By continuing, I acknowledge that I’ve read and agree to the <a className="payment__link" href="#">Terms of Service</a> & <a className="payment__link" href="#">Privacy Policy</a>.</p>
+                        <Button text="DOWNLOAD" size="xs"/>
                     </div>
                     <div className="payment__middle-right">
                         <p className="payment__step">3. Credit Card Information</p>
@@ -44,13 +52,16 @@ const Payment = () => {
                             <Input label="cardholder's name"/>
                             <Input label="card number"/>
                             <div className="payment__inputwrap">
-                                <Input width="321px" label="city"/>
-                                <Input width="321px" label="postal code"/>
+                                <Select options={months} width="321px" label="expiry month"/>
+                                <Select options={year} width="321px" label="expiry year"/>
                             </div>
-                      
+                            <Input label="CVV" />
+                            
                     </div>
                 </div>
+                
             </form>
+            
         </main>
     )
 }

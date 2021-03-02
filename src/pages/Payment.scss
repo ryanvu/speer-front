@@ -18,19 +18,21 @@
         font-size: 45px;
         letter-spacing: 4.5px;
         font-weight: 100;
+        margin-bottom: 49px;
         
     }
 
     &__form{
         display: flex;
         flex-direction: column;
-        margin: 0 7rem;
+        margin: 0 7rem 255px;
     }
     &__radio{
         margin-top: 2rem;
         display: flex;
         border: none;
         align-self: start;
+        margin-bottom: 148px;
     }
 
     &__wrapper{
@@ -60,4 +62,24 @@
         gap: 37px;
         justify-content: space-between;     
     }
+
+    &__tos{
+        font-size: 22px;
+        letter-spacing: 2.2px;
+        line-height: 2rem;
+        width: 651px;
+        color: #191919;
+        margin-top: 100px;
+        margin-bottom: 31px;
+    }
+
+    &__link{
+        text-decoration: none;
+        color: #2F1FE9;
+
+        &:visited{
+            color: #2F1FE9;
+        }
+    }
+
 }
