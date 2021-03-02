@@ -8,13 +8,28 @@ export const useAppContext = () => {
 
 export const AppProvider = ({ children }) => {
     const [colour, setColour] = useState("#FFFFFF")
+    const [headerCol, setHeaderCol] = useState("#FFFFFF")
+    const [page, setPage] = useState("");
 
     const changeAppColour = (colour) =>{
         setColour(colour)
     }
+
+    const changeHeaderCol = (col) => {
+        setHeaderCol(col);
+    }
+
+    const changePage = (page) => {
+        setPage(page);
+    }
+
     const value = {
         colour,
-        changeAppColour
+        changeAppColour,
+        headerCol,
+        changeHeaderCol,
+        page,
+        changePage
     }
 
     return (

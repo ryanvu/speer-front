@@ -1,25 +1,41 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+//context
+import { useAppContext } from '../../context/AppContext'; 
 //styles
 import './Header.scss';
 
 //assets
 import hamburger from '../../assets/svg/hamburger.svg';
+import hamburgerb from '../../assets/svg/hamburger-black.svg';
 
-const Header = () => {
+const Header = (props) => {
 
     const [showNav, setShowNav] = useState(false);
 
+    const { headerCol, changeHeaderCol, page } = useAppContext();
+
     const toggleNav = () => {
-        setShowNav(prev => !prev)
+        if(page === "pay"){
+            if (headerCol === "#000000") {
+                changeHeaderCol("#FFFFFF")
+                setShowNav(prev => !prev)
+            }
+            if (headerCol === "#FFFFFF") {
+                changeHeaderCol("#000000")
+                setShowNav(prev => !prev)
+            }
+        } else {
+            setShowNav(prev => !prev)
+        }
     }
 
     return (
         <header className="header">
             <div className="header__logo">
-                <img onClick={toggleNav} className="header__logo-hb" src={hamburger} alt="hamburger icon svg"/>
-                <h1 className="header__logo-title">EXP|CON</h1>
+                <img onClick={toggleNav} className="header__logo-hb" src={(headerCol === "#000000") ? hamburgerb : hamburger} alt="hamburger icon svg"/>
+                <h1 className="header__logo-title" style={(headerCol === "#000000") ? {color: `${headerCol}`} : null}>EXP|CON</h1>
             </div>
         <AnimatePresence>
             {showNav && 
