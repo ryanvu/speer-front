@@ -1,11 +1,28 @@
-import React from 'react'
-
+import React, { useEffect } from 'react'
+import { useInView } from 'react-intersection-observer';
+import { useAppContext } from '../../context/AppContext';
 //styles
 import './Yellow.scss';
 
 const Yellow = () => {
+
+    const { changeHeaderCol, isNavOpen } = useAppContext();
+    const { ref, inView } = useInView({
+        threshold: 0.8
+    })
+
+    useEffect(() => {
+        if (inView) {
+            if (isNavOpen) {
+            changeHeaderCol("#FFB33F")
+            } else {
+                changeHeaderCol("#FFFFFF")
+            }
+        }
+    }, [inView, isNavOpen])
+
     return (
-        <div className="yellow">
+        <div ref={ref} className="yellow">
             <div className="yellow__img">
 
             </div>
