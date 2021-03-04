@@ -15,7 +15,7 @@ const Header = (props) => {
 
     const [showNav, setShowNav] = useState(false);
 
-    const { headerCol, changeHeaderCol, page, changeNavState, isNavOpen } = useAppContext();
+    const { headerCol, changeHeaderCol, page, changeNavState, isNavOpen, isScrolling} = useAppContext();
 
     const closeNav = () => {
         setShowNav(false);
@@ -37,7 +37,12 @@ const Header = (props) => {
     }
 
     return (
-        <header className="header" style={(page === "home") ? {position: "fixed"} : null}>
+        !isScrolling && 
+        <motion.header
+        initial={{x: -100}}
+        animate={{x: 0}}
+        className="header" 
+        style={(page === "home") ? {position: "fixed"} : null}>
             <div className="header__logo">
                 <img onClick={toggleNav} className="header__logo-hb" src={(headerCol === "#000000") ? hamburgerb : hamburger} alt="hamburger icon svg"/>
                 <h1 className="header__logo-title" style={(headerCol === "#000000") ? {color: `${headerCol}`} : {color: `${headerCol}`}}>EXP|CON</h1>
@@ -76,7 +81,7 @@ const Header = (props) => {
                 </ul>    
             </motion.nav>}
         </AnimatePresence>
-        </header>
+        </motion.header>
     )
 }
 

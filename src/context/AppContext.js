@@ -10,6 +10,7 @@ export const AppProvider = ({ children }) => {
     const [colour, setColour] = useState("#FFFFFF");
     const [headerCol, setHeaderCol] = useState("#FFFFFF");
     const [isNavOpen, setIsNavOpen] = useState(false);
+    const [isScrolling, setIsScrolling] = useState(false)
     const [page, setPage] = useState("");
 
     const changeAppColour = (colour) =>{
@@ -28,6 +29,10 @@ export const AppProvider = ({ children }) => {
         setIsNavOpen(prev => !prev)
     };
 
+    const changeScrollingState = (state) => {
+        setIsScrolling(state)
+    }
+
     const value = {
         colour,
         changeAppColour,
@@ -36,7 +41,9 @@ export const AppProvider = ({ children }) => {
         page,
         changePage,
         isNavOpen,
-        changeNavState
+        changeNavState,
+        isScrolling,
+        changeScrollingState
     }
 
     return (

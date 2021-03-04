@@ -11,10 +11,23 @@ import './Home.scss'
 
 const Home = () => {
 
-    const { changePage } = useAppContext()
+    const { changePage, changeScrollingState } = useAppContext()
     useEffect(()=>{
         changePage("home")
     },[])
+
+    useEffect(()=> {
+        let scrollTimer = null;
+        window.addEventListener('scroll', () => {
+            if (scrollTimer !== null){
+                clearTimeout(scrollTimer);
+                changeScrollingState(true)
+            }
+            scrollTimer = setTimeout(() => {
+                changeScrollingState(false)
+            }, 500)
+        }, false)
+    }, [])
     return (
         <main className="home">
             <Hero />
